@@ -1,18 +1,27 @@
-  <div class="container uk-card-default">
-    <div>
+  <div class="uk-container">
+    <div class="uk-card-default uk-align-center uk-card-hover uk-card-body">
       <h1>Team creator</h1>
       <ul class="list">
-        <li>Ruben</li>
-        <li>Lean</li>
-        <li>Gaby</li>
+        <li *ngFor="let member of members">{{ member }}</li>
       </ul>
-      <div class="add-members-container">
-        <input type="text" placeholder="Name" />
-        <button>Add</button>
+      <form>
+      <div class="add-members-container ">
+        <input class="in-members"
+          #addMemberInput
+          type="text"
+          placeholder="Name"
+          (input)="onInput(addMemberInput.value)"
+          [value]="newMemberName"
+          />
+        <button class="uk-width-1-1"
+          (click)="addMember()">
+          Add
+        </button>
       </div>
-      <div class="input-container">
-        <input type="text" placeholder="How many teams?" />
+      <div class="input-container uk-row uk-flex-bottom">
+        <input type="text" class="uk-width-1-1" placeholder="How many teams?"  />
         <button>Generate</button>
       </div>
+    </form>
     </div>
   </div>

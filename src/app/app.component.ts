@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'first-angular';
+  newMemberName: string = '';
+  members: string[] = [];
+
+  onInput(member: string){
+    this.newMemberName = member;
+    console.log(this.newMemberName);
+  }
+
+
+  addMember(){
+    this.members.push(this.newMemberName);
+    this.newMemberName='';
+    console.log(this.members);
+  }
 }
