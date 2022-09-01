@@ -19,8 +19,14 @@
         </button>
       </div>
       <div class="input-container uk-row uk-flex-bottom">
-        <input type="text" class="uk-width-1-1" placeholder="How many teams?"  />
-        <button>Generate</button>
+        <input type="text"
+          #NumOfTeamsInput
+          class="uk-width-1-1"
+          placeholder="How many teams?" 
+          (input)="onNumOfTeamsInput(NumOfTeamsInput.value)"
+          [value]="numOfTeams"
+           />
+        <button (click)="generateTeams()">Generate</button>
       </div>
     </form>
       <p *ngIf="errorMessage" class="error-msg"> {{ errorMessage }}</p>
