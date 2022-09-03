@@ -20,10 +20,10 @@
       </div>
       <div class="input-container uk-row uk-flex-bottom">
         <input type="text"
-          #NumOfTeamsInput
+          #numOfTeamsInput
           class="uk-width-1-1"
           placeholder="How many teams?" 
-          (input)="onNumOfTeamsInput(NumOfTeamsInput.value)"
+          (input)="onNumOfTeamsInput(numOfTeamsInput.value)"
           [value]="numOfTeams"
            />
         <button (click)="generateTeams()">Generate</button>
